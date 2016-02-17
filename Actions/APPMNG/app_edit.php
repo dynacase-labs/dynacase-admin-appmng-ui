@@ -31,7 +31,7 @@ function app_edit(Action & $action)
         $action->lay->Set("TITRE", _("titlecreate"));
         $action->lay->Set("BUTTONTYPE", _("butcreate"));
     } else {
-        $AppCour = new Application($action->GetParam("CORE_DB") , $id);
+        $AppCour = new Application($action->dbaccess, $id);
         $action->lay->eSet("id", $id);
         $action->lay->Set("name", $AppCour->name);
         $action->lay->Set("short_name", _($AppCour->short_name));
